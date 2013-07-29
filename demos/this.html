@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Box</title>
+<script type="text/javascript" src="../lib/js/jquery-1.10.2.min.js"></script>
+<style type="text/css">
+body, html {
+	margin: 0;
+	padding: 0;
+	}
+.box {
+	float: left;
+	width: 130px;
+	height: 130px;
+	}
+#box0 {
+	background-color: #C60;
+	}
+</style>
+<script type="text/javascript">
+
+$(document).ready(initPage);
+
+function initPage()
+{
+//	document.getElementById("box0").style.backgroundColor = "red"; 
+	$("#box0").hover(mOver,mOut);
+	document.getElementById("box0").addEventListener("click",mClick, false);
+//	alert(navigator.appCodeName + " " + navigator.appVersion);
+}
+
+function mOver(e)
+{
+//	$(e.currentTarget).css("backgroundColor","red");
+	this.style.backgroundColor = "red";
+}
+
+function mOut()
+{
+//	$(this).css("backgroundColor","orange");
+	this.style.backgroundColor = "orange";
+}
+
+function mClick()
+{
+	this.style.backgroundColor = "blue";
+}
+
+</script>
+</head>
+<body>
+    <div id="box0" class="box"></div>
+</body>
+</html>

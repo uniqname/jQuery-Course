@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Javascript II - jQuery</title>
+
+        <meta name="description" content="jQuery. THE JavaScript Library">
+        <meta name="author" content="Cory Brown">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>JavaScript II - jQuery</h1>
+                    <p>CoryBrown</p>
+                    <p>oh.wise.man@gmail.com</p>
+                </section>
+                <section>
+                    <h1>Session 1:</h1>
+                </section>
+                <section>
+                    <ul>
+                        <li>Jquery is a javascript Library</li>
+                        <li class="fragment">Other scripting libraries:
+                            <ul>
+                               <li class="fragment">MooTools, Prototype, Scriptaculous, YUI, Dojo, Sencha</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Jquery References
+                           <ul>
+                                <li>jQuery <a href="http://jquery.com">http://jquery.com</a></li>
+                                <li>jQuery API Browser <a href="http://api.jquery.com/">http://api.jquery.com/
+
+
+
+                                    function</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Jquery syntax</h1>
+                    <pre><code>
+                        $(selector).method()
+                    </code></pre>
+                    <p class="fragment">A <code>selector</code> is any valid CSS selector + a few extra</p>
+                    <p class="fragment">The <code>method</code> is the operation you would like to perform on all the matched elements</p>
+                </section>
+                <section>
+                    <h1>Javascript Review</h1>
+                    <p>Named functions, arguments/parameters, return values, scope</p>
+                    <pre class="fragment"><code>
+    function myFunc (arg1, arg2, arg3) {
+        /*
+           Everything inside the curly braces
+           are in the function scope
+        */
+        
+        ...
+
+        return something;
+    }
+                    </code></pre>
+                </section>
+                <section>
+                    <h1>Javascript Review</h1>
+                    <p>Anonymous functions</p>
+                    <pre class="fragment"><code>
+    function () {
+        /*
+            This function is annonymous because
+            it doesn't have a name.
+        */
+        ...
+
+    }
+                    </code></pre>
+                </section>
+                <section>
+                    <section>
+                        <h1>Javascript Review</h1>
+                        <p>this, $(this) Demo</p>
+                        <iframe src="demos/this.html"></iframe>
+                    </section>
+                    <section>
+                        <h1>Javascript Review</h1>
+                        <p>this, $(this)</p>
+                        <pre><code>
+    $(document).ready(initPage);
+
+    function initPage()
+    {
+    //  document.getElementById("box0").style.backgroundColor = "red"; 
+        $("#box0").hover(mOver,mOut);
+        document.getElementById("box0").addEventListener("click",mClick, false);
+    //  alert(navigator.appCodeName + " " + navigator.appVersion);
+    }
+
+    function mOver(e)
+    {
+    //  $(e.currentTarget).css("backgroundColor","red");
+        this.style.backgroundColor = "red";
+    }
+
+    function mOut()
+    {
+    //  $(this).css("backgroundColor","orange");
+        this.style.backgroundColor = "orange";
+    }
+
+    function mClick()
+    {
+        this.style.backgroundColor = "blue";
+    }       
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Exercise</h1>
+                        <h2>Change the background color of a box.</h2>
+                        <p>put script block in <code>&lt;head&gt;</code>, then at the end of <code>&lt;body&gt;</code></p>
+                        <pre class="codepen" data-height="300" data-type="html" data-href="xuACk" data-user="uniqname" data-safe="true"><code></code><a href="http://codepen.io/uniqname/pen/xuACk">Check out this Pen!</a></pre>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+
+                    <section>
+                        <h1>Exercise</h1>
+                        <h2>Change the background color of a box.</h2>
+                        <p>Put script back in <code>&lt;head&gt;</code> and use onload</code></p>
+                        <pre class="codepen" data-height="300" data-type="html" data-href="xuACk" data-user="uniqname" data-safe="true"><code></code><a href="http://codepen.io/uniqname/pen/xuACk">Check out this Pen!</a></pre>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+
+                    <section>
+                        <h1>Exercise</h1>
+                        <h2>Change the background color of a box.</h2>
+                        <p>Remove onload and use onclick on the element</p>
+                        <pre class="codepen" data-height="300" data-type="html" data-href="xuACk" data-user="uniqname" data-safe="true"><code></code><a href="http://codepen.io/uniqname/pen/xuACk">Check out this Pen!</a></pre>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+
+                    <section>
+                        <h1>Exercise</h1>
+                        <h2>Change the background color of a box.</h2>
+                        <p>Remove onload and put in onclick on element</p>
+                        <pre class="codepen" data-height="300" data-type="html" data-href="xuACk" data-user="uniqname" data-safe="true"><code></code><a href="http://codepen.io/uniqname/pen/xuACk">Check out this Pen!</a></pre>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+
+                    <section>
+                        <h1>Exercise</h1>
+                        <h2>Change the background color of a box.</h2>
+                        <p>Remove onclick and add event listener</p>
+                        <pre class="codepen" data-height="300" data-type="html" data-href="xuACk" data-user="uniqname" data-safe="true"><code></code><a href="http://codepen.io/uniqname/pen/xuACk">Check out this Pen!</a></pre>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                </section>
+                <section>
+                    <h1>jQuery Intro</h1>
+                    <h2 class="fragment">Selectors</h2>
+                    <p class="fragment">Same as CSS</p>
+                    <ul>
+                        <li class="fragment">$('div')</li>
+                        <li class="fragment">$('.myClass')</li>
+                        <li class="fragment">$('#myID')</li>
+                        <li class="fragment">$('[attribute]'), $('[attribute="value"]')</li>
+                        <li class="fragment">$('ancestor decendant')</li>
+                        <li class="fragment">$('parent > child')</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>jQuery Intro</h1>
+                    <h2 class="fragment">Tree Traversal</h2>
+                    <ul>
+                        <li class="fragment">next()</li>
+                        <li class="fragment">prev()</li>
+                        <li class="fragment">find()</li>
+                        <li class="fragment">children()</li>
+                        <li class="fragment">parent() <span class="fragment">parents()</span> <span class="fragment">parentsUntil()</span></li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>jQuery Intro</h1>
+                    <h2 class="fragment">Events</h2>
+                    <ul>
+                        <li class="fragment">click()</li>
+                        <li class="fragment">hover()</li>
+                        <li class="fragment">keypress()</li>
+                        <li class="fragment">on(), <span class-"fragment">one()</span></li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>jQuery Intro</h1>
+                    <h2 class="fragment">Effects</h2>
+                    <ul>
+                        <li class="fragment">hide(), show()</li>
+                        <li class="fragment">fadeIn(), fadeOut()</li>
+                        <li class="fragment">slideUp(), slideDown()</li>
+                        <li class="fragment">css()</li>
+                        <li class="fragment">animate()</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h1>jQuery Intro</h1>
+                        <h2>$(document).ready()</h2>
+<pre class="codepen" data-height="300" data-type="result" data-href="lonpw" data-user="uniqname" data-safe="true"><code></code><a href="http://codepen.io/uniqname/pen/lonpw">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                </section>
+                <section>
+                    <h1>Exercise</h1>
+                    <h2>Using jQuery, create an functioning image gallery.</h2>
+                </section>
+                <section>
+                    <h1>Session 2:</h1>
+                </section>
+                <section>
+                    <h1>Unobtrusive Development</h1>
+                    <ul>
+                        <li class="fragment">Seperate behavior from markup</li>
+                        <li class="fragment">Avoid Global Variables</li>
+                        <li class="fragment">Namespace</li>
+                        <li class="fragment">Gracefull Degradation</li>
+                        <li class="fragment">Feature Detection</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Debugging</h1>
+                    <ul>
+                        <li class="fragment">Firebug/Web Inspector</li>
+                        <li class="fragment">Console</li>
+                        <li class="fragment">Breakpoints</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Chaining</h1>
+                    <ul>
+                        <li class="fragment">$(selector).method().otherMethod().someOtherMethod();</li>
+                        <li class="fragment">Each method return a jQuery list.</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h1>Callbacks</h1>
+                        <ul>
+                            <li class="fragment">Applies to asynchronous functions.</li>
+                            <li class="fragment">What to do when the function is finished.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>Exercise</h1>
+                        <p>Make an element grow wide, then grow tall.</p>
+                        <p data-height="268" data-theme-id="0" data-slug-hash="Ifgts" data-user="uniqname" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/uniqname/pen/Ifgts'>Ifgts</a> by Cory (<a href='http://codepen.io/uniqname'>@uniqname</a>) on <a href='http://codepen.io'>CodePen</a></p>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                </section>
+                <section>
+                    <h1>Get or Set</h1>
+                    <p>Some methods allow you to either get or set a value</p>
+                    <ul>
+                        <li class="fragment"><code>.css(property)</code>, <code>.css(property, newValue)</code></li>
+                        <li class="fragment"><code>.html()</code>, <code>.html('&lt;p&gt;HTML to be set&lt;/p&gt;')</code></li>
+                        <li class="fragment"><code>.attr(attribute)</code>, <code>.css(attribute, newValue)</code></li>
+                        <li class="fragment"><code>.width()</code>, <code>.width(newWidth)</code></li>
+                        <li class="fragment"><code>.height()</code>, <code>.height(newHeight)</code></li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Exercise</h1>
+                    <p><a href="exercises/mojito.zip" target="_blank">Mojito</a></p>
+                </section>
+                <section>
+                    <h1>Session 3</h1>
+                    <h2>jQuery: Manipulation</h2>
+                </section>
+                <section>
+                    <h1>Change Content</h1>
+                    <ul>
+                        <li><a href="http://api.jquery.com/after/">.after()</a></li>
+                        <li><a href="http://api.jquery.com/before/">.before()</a></li>
+                        <li><a href="http://api.jquery.com/append/">.append()</a></li>
+                        <li><a href="http://api.jquery.com/prepend/">.prepend()</a></li>
+                        <li><a href="http://api.jquery.com/replace/">.replace()</a></li>
+                        <li><a href="http://api.jquery.com/clone/">.clone()</a></li>
+                        <li><a href="http://api.jquery.com/remove/">.remove()</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Find Content</h1>
+                    <ul>
+                        <li><a href="http://api.jquery.com/siblings/">.siblings()</a></li>
+                        <li><a href="http://api.jquery.com/parent/">.parent()</a>, <a href="http://api.jquery.com/parents/">.parents()</a>, <a href="http://api.jquery.com/parentsUntil/">.parentsUntil()</a></li>
+                        <li><a href="http://api.jquery.com/children/">.children()</a></li>
+                        <li><a href="http://api.jquery.com/find/">.find()</a></li>
+                        <li><a href="http://api.jquery.com/has/">.has()</a></li>
+                        <li><a href="http://api.jquery.com/next/">.next()</a></li>
+                        <li><a href="http://api.jquery.com/prev/">.prev()</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Manipulate jQuery Stack</h1>
+                    <ul>
+                        <li><a href="http://api.jquery.com/end/">.end()</a></li>
+                        <li><a href="http://api.jquery.com/add/">.add()</a></li>
+                        <li><a href="http://api.jquery.com/even/">.even()</a></li>
+                        <li><a href="http://api.jquery.com/odd/">.odd()</a></li>
+                        <li><a href="http://api.jquery.com/filter/">.filter()</a></li>
+                        <li><a href="http://api.jquery.com/andSelf/">.andSelf()</a></li>
+                        <li><a href="http://api.jquery.com/not/">.not()</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>$.each</h1>
+                    <p data-height="268" data-theme-id="0" data-slug-hash="EzrIK" data-user="uniqname" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/uniqname/pen/EzrIK'>EzrIK</a> by Cory (<a href='http://codepen.io/uniqname'>@uniqname</a>) on <a href='http://codepen.io'>CodePen</a></p>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+                </section>
+                <section>
+                    <h1>Timeout and Interval</h1>
+                    <ul>
+                        <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/API/window.setTimeout" target="_blank">window.setTimeout</a></li>
+                        <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/API/window.setInterval" target="_blank">window.setInterval</a></li>
+                    </ul>
+                    
+                </section>
+                <section>
+                    <h1>Exercise</h1>
+                    <h2>DOM Manipulation</h2>
+                    <p>Make a real-time digital clock that updates every second.</p>
+                </section>
+                
+                <section>
+                    <h1>Section 4</h1>
+                </section>
+                <section>
+                    <h1>Built in effects</h1>
+                    <ul>
+                        <li class="fragment"><a href="http://api.jquery.com/fadeIn">fadeIn</a> / <a href="http://api.jquery.com/fadeOut/">fadeOut</a></li>
+                        <li class="fragment"><a href="http://api.jquery.com/slideUp/">slideUp</a> / <a href="http://api.jquery.com/slideDown/">SlideDown</a></li>
+                        <li class="fragment"><a href="http://api.jquery.com/show/">show</a> / <a href="http://api.jquery.com/hide/">hide</a></li>
+                    </ul>
+                </section>
+                <section data-state="audio">
+                    <h1>Callbacks</h1>
+                    <audio src="http://promodj.com/source/2767948/Gwen_Stefani_vs_Armando_Fuentez_Hollaback_Girl_DJ_Kerimoff_Mash_up.mp3?t=113,120" preload="auto"></audio>
+
+                   <!--  <object width="250" height="40" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsSong2885721070" name="gsSong2885721070"><param name="movie" value="http://grooveshark.com/songWidget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&songID=28857210&style=metal&p=0" /><object type="application/x-shockwave-flash" data="http://grooveshark.com/songWidget.swf" width="250" height="40"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&songID=28857210&style=metal&p=0" /><span><a href="http://grooveshark.com/search/song?q=Gwen%20Stefani%20Hollaback%20Girl" title="Hollaback Girl by Gwen Stefani on Grooveshark">Hollaback Girl by Gwen Stefani on Grooveshark</a></span></object></object> -->
+                    <ul>
+                        <li class="fragment">A function that is passed as an argument to another function.</li>
+                        <li class="fragment">Typically called after the second function has completed.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>.animate()</h1>
+                    <ul>
+                        <li class="fragment">Animates to a set of CSS properties</li>
+                        <li class="fragment">Not all properties can be animated</li>
+                        <li class="fragment">Performs animations asynchronously</li>
+                        <li class="fragment">Can take a callback function as last argument</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Easing</h1>
+                    <ul>
+                        <li class="fragment">A mathmatical description of an animation timeline</li>
+                        <li class="fragment">jQuery only comes with 2 types: linear and swing</li>
+                        <li class="fragment">Others can be added with <a href="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js" target="_blank">plugins</a></li>
+                        <li class="fragment">You can write your own! <span class="fragment">(but you probably don't want to.)</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Exercise</h1>
+                    <p>Update digital clock with fade in and out, expansion/contraction, sliding, etc.</p>
+                    <p data-height="268" data-theme-id="0" data-slug-hash="kyxog" data-user="uniqname" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/uniqname/pen/kyxog'>Digital Clock</a> by Cory (<a href='http://codepen.io/uniqname'>@uniqname</a>) on <a href='http://codepen.io'>CodePen</a></p>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+                </section>
+
+                <section>
+                    <h1>Session 5</h1>
+                    <p>Update digital clock with fade in and out, expansion/contraction, sliding, etc.</p>
+                    <p data-height="268" data-theme-id="0" data-slug-hash="kyxog" data-user="uniqname" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/uniqname/pen/kyxog'>Digital Clock</a> by Cory (<a href='http://codepen.io/uniqname'>@uniqname</a>) on <a href='http://codepen.io'>CodePen</a></p>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+                </section>
+
+                <section>
+                    <h1>Final Project</h1>
+                    <ul>
+                        <li>Create a photo slideshow with jQuery using images in a <code>&lt;ul&gt;</code></li>
+                        <li>Use attributes for captions</li>
+                        <li>Provide next/prev buttons and/or numbered links</li>
+                        <li>Display a visual transition between photos <i>(fade, slide, etc)</i></li>
+                        <li><i><strong>(bonus)</strong> Create thumbnails to change photos</i></li>
+                    </ul>
+                </section>
+                <!--
+
+Session 4:
+- Built-in effects (fade, slide, etc)
+- Callbacks when effects are done
+- Using animate()
+- Using easing
+- Exercise: update digital clock with fade in and out, expansion/contraction, sliding
+
+Session 5:
+- Jquery Plugins: Cycle, Lightbox, etc
+- Choose one, configure, edit CSS and integrate
+
+************ WD301 *************
+- Make a form
+- Validate: Check if empty field and display error if empty
+- Unobtrusive javascript
+- Error messages should be clear and friendly
+- Check for unlikely entries (email addresses with less than 5 characters)
+- Blur and focus - initial values in fields
+************ WD301 *************
+
+Session 6:
+Create a 3 page website that uses two Jquery plugins and custom JQuery for forms, user interaction and/or animation
+1. Site concept
+2. Plan
+3. CSS/HTML
+4. Jquery
+5. Browser test
+
+************ WD301 *************
+- Create a photo slideshow with jQuery using images in a <ul>
+- Use attributes for captions
+- Provide next/prev buttons and/or numbered links
+- display a visual transition between photos (fade, slide, etc)
+- (bonus) Create thumbnails to change photos
+************ WD301 *************
+
+Session 7:
+- Continue project work
+
+Session 8:
+- Finish project
+- Critique
+
+
+-->
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener('audio', function (){
+                var holla = document.querySelector('[data-state="audio"]').querySelector('audio');
+                holla.currentTime = 110;
+                window.setTimeout(function() {
+                    holla.pause();
+                }, 4000);
+                holla.play();
+            });
+        </script>
+
+    </body>
+</html>
